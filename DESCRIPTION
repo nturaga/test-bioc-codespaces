@@ -1,16 +1,36 @@
-Package: zlibbioc
+Package: BiocDockerManager
 Type: Package
-Title: An R packaged zlib-1.2.5
-Version: 1.43.0
-Author: Martin Morgan
-Maintainer: Bioconductor Package Maintainer <maintainer@bioconductor.org>
-Description: This package uses the source code of zlib-1.2.5 to create
-  libraries for systems that do not have these available via other
-  means (most Linux and Mac users should have system-level access to
-  zlib, and no direct need for this package). See the vignette for
-  instructions on use.
-biocViews: Infrastructure
-URL: https://bioconductor.org/packages/zlibbioc
-BugReports: https://github.com/Bioconductor/zlibbioc/issues
-License: Artistic-2.0 + file LICENSE
-LazyLoad: yes
+Title: Access Bioconductor docker images
+Version: 1.9.2
+Authors@R: c(
+    person(
+	"Bioconductor Package Maintainer",
+	email = "maintainer@bioconductor.org",
+	role = c("cre")
+    ),
+    person(
+	"Nitesh", "Turaga",
+	email = "Nitesh.Turaga@RoswellPark.org",
+	role = "aut"
+   ))
+Description: Package works analogous to BiocManager but for docker
+	     images. Use the BiocDockerManager package to install and
+	     manage docker images provided by the Bioconductor
+	     project. A convenient package to install images, update
+	     images and find which Bioconductor based docker images
+	     are available.
+biocViews: Software, Infrastructure, ThirdPartyClient
+Depends: R (>= 4.1)
+Imports: httr, whisker, readr, dplyr, utils, methods, memoise
+Suggests:
+    BiocStyle,
+    knitr,
+    rmarkdown,
+    testthat (>= 2.1.0)
+SystemRequirements: docker
+VignetteBuilder: knitr
+License: Artistic-2.0
+Encoding: UTF-8
+LazyData: false
+BugReports: https://github.com/Bioconductor/BiocDockerManager/issues
+RoxygenNote: 7.1.1
